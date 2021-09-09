@@ -5,4 +5,4 @@ console.log(os.arch());
 console.log(os.cpus());
 console.log('Mémoire dispo: (Go) ', os.freemem()/1024/1024/1024);
 console.log('Mémoire totale: (Go) ', os.totalmem()/1024/1024/1024);
-console.log('Uptime: (en heures) ', os.uptime()/60/60); //combien de tmeps en secondes
+console.log('Uptime: (en heures) ', os.uptime()/60/60); //combien de temps en secondes
