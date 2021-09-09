@@ -71,29 +71,41 @@ let nomDossier = path.join(__dirname, 'data');
 // });
 // console.log('FIn du programme');
 
-fs.access( nomDossier, fs.constants.F_OK, err => {
-    if (err)
-        console.log(`Le dossier "${nomDossier}" ne peut pas être écrit`);
-    else
-        console.log(`Le dossier "${nomDossier}" existe et est modifiable`);
-});
-fs.access( nomFichier, fs.constants.F_OK, err => {
-    if (err)
-        console.log(`Le fichier "${nomFichier}" ne peut pas être écrit`);
-    else
-        lectureFichier(nomFichier);
-});
-console.log('FIn du programme');
+// fs.access( nomDossier, fs.constants.F_OK, err => {
+//     if (err)
+//         console.log(`Le dossier "${nomDossier}" ne peut pas être écrit`);
+//     else
+//         console.log(`Le dossier "${nomDossier}" existe et est modifiable`);
+// });
+// fs.access( nomFichier, fs.constants.F_OK, err => {
+//     if (err)
+//         console.log(`Le fichier "${nomFichier}" ne peut pas être écrit`);
+//     else
+//         lectureFichier(nomFichier);
+// });
+// console.log('FIn du programme');
 
-function lectureFichier(nomFichier) {
-    console.log(`Le fichier existe et voici son contenu`);
-    // pour lire le contenu d'un fichier
-fs.readFile(
-    nomFichier,
-    'utf-8',
-    (err, data) => {
+// function lectureFichier(nomFichier) {
+//     console.log(`Le fichier existe et voici son contenu`);
+//     // pour lire le contenu d'un fichier
+// fs.readFile(
+//     nomFichier,
+//     'utf-8',
+//     (err, data) => {
+//         if (err) throw err;
+//         console.log(data);
+//     }
+// );
+// }
+
+// autre façon de vérifier la présence d'un fichier
+fs.stat(
+    nomDossier,
+    (err,stats) => {
         if (err) throw err;
-        console.log(data);
+        console.log('est-ce un dossier?', stats.isDirectory());
+        console.log('est-ce un fichier?', stats.isFile());
+        console.log('stats:', stats);        
     }
-);
-}
+)
+

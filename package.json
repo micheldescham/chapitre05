@@ -4,7 +4,8 @@
   "description": "Démonstration du chapitre 5",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index",
+    "start": "node index"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/micheldescham/chapitre05/issues"
   },
-  "homepage": "https://github.com/micheldescham/chapitre05#readme"
+  "homepage": "https://github.com/micheldescham/chapitre05#readme",
+  "dependencies": {
+    "nodemon": "^2.0.12"
+  }
 }
