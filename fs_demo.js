@@ -1,7 +1,7 @@
 // Démonstration de la librairie fs (file system)
-// - lecture dé'un fichier
+// - lecture d'un fichier
 // - renommer un fichier
-// - verifications de la présence/lecture fichier/dossier
+// - verifications de la présence/lecture/ecriture fichier/dossier
 // Auteur: Michel Deschambault
 // 7 septembre 2021
 const fs = require('fs');
@@ -86,7 +86,7 @@ let nomDossier = path.join(__dirname, 'data');
 // console.log('FIn du programme');
 
 // function lectureFichier(nomFichier) {
-//     console.log(`Le fichier existe et voici son contenu`);
+//     console.log(`Le fichier existe et voici son contenu:`);
 //     // pour lire le contenu d'un fichier
 // fs.readFile(
 //     nomFichier,
@@ -100,7 +100,7 @@ let nomDossier = path.join(__dirname, 'data');
 
 // autre façon de vérifier la présence d'un fichier
 fs.stat(
-    nomDossier,
+    nomFichier,
     (err,stats) => {
         if (err) throw err;
         console.log('est-ce un dossier?', stats.isDirectory());
